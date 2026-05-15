@@ -1,0 +1,10 @@
+{
+  "contracts/SimpleContract.sol": {
+    "__sources__": {
+      "contracts/SimpleContract.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.30;\n\ncontract SimpleContract {\n// What is Remix?, Setting Up Remix, Writing Your First Solidity Smart Contract \n// Solidity Basics: Data Types and Variables, Functions, Storage and Memory, Contract Structure.\n    \n}\n\n",
+        "file": "contracts/SimpleContract.sol"
+      }
+    }
+  }
+}
