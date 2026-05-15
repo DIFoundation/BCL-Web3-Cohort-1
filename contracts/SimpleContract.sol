@@ -6,12 +6,16 @@ pragma solidity ^0.8.30;
 SIMPLE SOLIDITY TUTORIAL CONTRACT
 
 Lesson Topics Covered:
+
 1. What is Remix IDE?
 2. Contract Structure
 3. Data Types and Variables
 4. Functions
 5. Storage vs Memory
+6. Arrays
+7. Mapping
 6. State Changes on Blockchain
+8. View and Pure Function
 
 */
 
@@ -19,14 +23,21 @@ contract SimpleContract {
 
     /*
     =====================================================
-                        VARIABLES
+                        STATE VARIABLES
     =====================================================
 
     Solidity Data Types:
+    Common Data Type
     - uint      => positive numbers
     - string    => text
     - bool      => true or false
     - address   => wallet address
+
+    Uncommon Data Type
+    - int
+    - byte
+    - bytes
+
     */
 
     // State Variables
@@ -40,10 +51,38 @@ contract SimpleContract {
 
     /*
     =====================================================
-                        CONSTRUCTOR
+                        ARRAYS
+    =====================================================
+    */
+
+    string[] public students;
+
+    /*
+    =====================================================
+                        MAPPINGS
     =====================================================
 
-    Runs once when contract is deployed.
+    Mapping Syntax:
+    mapping(KeyType => ValueType)
+
+    Example:
+    address => uint
+    */
+
+    // Store balances of users
+    mapping(address => uint) public balances;
+
+    // Store student names using ID
+    mapping(uint => string) public studentNames;
+
+    // Check if a user is registered
+    mapping(address => bool) public registeredUsers;
+
+
+    /*
+    =====================================================
+                        CONSTRUCTOR
+    =====================================================
     */
 
     constructor() {
@@ -52,7 +91,7 @@ contract SimpleContract {
 
     /*
     =====================================================
-                        FUNCTIONS
+                        BASIC FUNCTIONS
     =====================================================
     */
 
@@ -69,6 +108,55 @@ contract SimpleContract {
     // Function to toggle student status
     function toggleStudentStatus() public {
         isStudent = !isStudent;
+    }
+
+    /*
+    =====================================================
+                    ARRAY FUNCTIONS
+    =====================================================
+    */
+
+    function addStudent_(string memory _studentName) public {
+        students.push(_studentName);
+    }
+
+    function getTotalStudents() public view returns(uint) {
+        return students.length;
+    }
+
+    /*
+    =====================================================
+                    MAPPING FUNCTIONS
+    =====================================================
+    */
+
+    // Add balance to sender
+    function addBalance(uint _amount) public {
+        balances[msg.sender] += _amount;
+    }
+
+    // Register a user
+    function registerUser() public {
+        registeredUsers[msg.sender] = true;
+    }
+
+    // Save student name using ID
+    function setStudentName(
+        uint _id,
+        string memory _studentName
+    )
+        public
+    {
+        studentNames[_id] = _studentName;
+    }
+
+    // Read student name
+    function getStudentName(uint _id)
+        public
+        view
+        returns(string memory)
+    {
+        return studentNames[_id];
     }
 
     /*
@@ -107,14 +195,12 @@ contract SimpleContract {
     - Cheaper
     */
 
-    string[] public students;
-
     // STORAGE example
     function addStudent(string memory _studentName) public {
         students.push(_studentName);
     }
 
-    // MEMORY example
+    // MEMORY example 
     function compareStrings(
         string memory text1,
         string memory text2
