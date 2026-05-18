@@ -6,32 +6,37 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_deployer",
-						"type": "address"
-					}
-				],
+				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
 			{
-				"inputs": [],
-				"name": "age",
-				"outputs": [
+				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "_studentName",
+						"type": "string"
 					}
 				],
-				"stateMutability": "view",
+				"name": "addStudent",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "isStudent",
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "text1",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "text2",
+						"type": "string"
+					}
+				],
+				"name": "compareStrings",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -44,12 +49,40 @@
 			},
 			{
 				"inputs": [],
-				"name": "name",
+				"name": "getAllDetails",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDetails",
 				"outputs": [
 					{
 						"internalType": "string",
 						"name": "",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -77,7 +110,13 @@
 					}
 				],
 				"name": "setAge",
-				"outputs": [],
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -92,6 +131,25 @@
 				"name": "setName",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "students",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -130,11 +188,11 @@
 	},
 	"sources": {
 		"contracts/PlayGround.sol": {
-			"keccak256": "0x7203d67888b892618ad3c6ffad271c5f43104cd478739ca1fc28ab1069f343d9",
+			"keccak256": "0x0da32c545ec6454c6dba0f06541195feef029d2d3c49ab47027659180f396d65",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8b652337bb0af465d28377a33318800557a3c3f9b58f0075e479829793ce544a",
-				"dweb:/ipfs/QmcE6xG33fWUWMrhWqyjhpuQofygmPZZDWZo17DZmCWV8p"
+				"bzz-raw://c46d817592c799bc0a51054b22481db7f0f8568b6268029be189ced44912a246",
+				"dweb:/ipfs/QmZyNm2FcAyvQdaJq32fPp2vnm6mECUr5Kq8vs151nHTxe"
 			]
 		}
 	},

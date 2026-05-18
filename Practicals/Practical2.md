@@ -1,0 +1,6 @@
+A university plans to build a decentralized student management and wallet system on the blockchain using Solidity. As a blockchain developer, you are required to develop a smart contract named `StudentPortal` using Solidity version `^0.8.30` in Remix IDE. 
+The contract should contain state variables to store details such as the school name, minimum student age, portal status, and administrator wallet address. The contract must use a constructor to automatically assign the deployer as the admin. 
+Implement arrays to store registered student names and mappings to manage student records, student wallet balances (optional), and registration status. 
+Create functions that allow students to register, add their names to the student list, save and retrieve student names. 
+The contract should also include functions to update school information, change the minimum age requirement, and toggle the portal status between open and closed. Additionally, implement `view` functions to return stored contract details and `pure` functions to compare minimum age and student age using `keccak256`. 
+Demonstrate your understanding of `storage` and `memory` by properly using them in your functions and explaining their differences in comments within the code. The project should be properly commented, well-structured, and capable of compiling and deploying successfully.
